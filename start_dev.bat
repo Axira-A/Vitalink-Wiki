@@ -31,6 +31,7 @@ if not exist "client\node_modules" (
     echo Installing Client Dependencies...
     cd client
     call npm install
+    call npm install react-markdown remark-gfm lucide-react --save
     cd ..
 )
 

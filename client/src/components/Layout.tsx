@@ -3,31 +3,41 @@ import { motion } from 'framer-motion';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-ak-dark text-ak-text font-sans">
-      <nav className="h-16 border-b border-ak-gray flex items-center justify-between px-8 bg-ak-dark/90 backdrop-blur fixed w-full z-10">
-        <Link to="/" className="text-2xl font-bold tracking-tighter text-ak-accent uppercase">
-          Vitalink<span className="text-white">.Wiki</span>
+    <div className="min-h-screen flex flex-col bg-bg-primary text-text-primary font-sans selection:bg-accent selection:text-white">
+      <nav className="h-20 border-b border-white/5 flex items-center justify-between px-8 bg-bg-primary/80 backdrop-blur-md fixed w-full z-50 transition-all">
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-black font-bold text-lg group-hover:scale-105 transition-transform">
+            V
+          </div>
+          <span className="text-xl font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+            Vitalink<span className="text-text-secondary font-normal">.Wiki</span>
+          </span>
         </Link>
-        <div className="space-x-6 text-sm font-medium tracking-wide">
-          <Link to="/" className="hover:text-ak-accent transition-colors">首页</Link>
-          <Link to="/wiki/intro" className="hover:text-ak-accent transition-colors">百科</Link>
-          <Link to="/login" className="hover:text-ak-accent transition-colors">登录</Link>
+        <div className="space-x-8 text-sm font-medium tracking-wide text-text-secondary">
+          <Link to="/" className="hover:text-white transition-colors">首页</Link>
+          <Link to="/wiki/intro" className="hover:text-white transition-colors">知识库</Link>
+          <Link to="/login" className="px-4 py-2 bg-white/5 rounded-full hover:bg-white/10 text-white transition-colors border border-white/5">登录</Link>
         </div>
       </nav>
       
-      <main className="flex-grow pt-20 px-8">
+      <main className="flex-grow pt-24 px-6 md:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.4 }}
         >
           <Outlet />
         </motion.div>
       </main>
 
-      <footer className="h-12 border-t border-ak-gray flex items-center justify-center text-xs text-ak-text-muted">
-        © 2025 VITALINK. 版权所有.
+      <footer className="h-24 border-t border-white/5 flex flex-col items-center justify-center text-xs text-text-secondary/50 space-y-2">
+        <div className="flex space-x-6">
+          <a href="#" className="hover:text-accent transition-colors">隐私政策</a>
+          <a href="#" className="hover:text-accent transition-colors">服务条款</a>
+          <a href="#" className="hover:text-accent transition-colors">关于我们</a>
+        </div>
+        <p>© 2025 VITALINK. DESIGNED FOR CREATORS.</p>
       </footer>
     </div>
   );
