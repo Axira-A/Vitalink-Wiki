@@ -1,6 +1,6 @@
 # Vitalink Wiki 项目
 
-一个个人 Wiki 知识库网站。
+一由Rutsunine主创的个人 OC 知识库网站。
 
 ## 项目结构
 - `client/`: 基于 React + Vite 的前端应用。
